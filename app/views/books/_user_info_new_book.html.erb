@@ -1,0 +1,24 @@
+<h2>User info</h2>
+<p>image</p>
+<table>
+	<tbody>
+		<tr>
+			<td>name</td>
+			<td><%= user.name %></td>
+		</tr>
+		<tr>
+			<td>introduction</td>
+			<td><%= user.introduction %></td>
+		</tr>
+	</tbody>
+</table>
+<%= link_to 'User Edit', edit_user_path(current_user.id) %>
+
+<h2>New book</h2>
+<%= form_for(book) do |f| %>
+<p>Title</p>
+<%= f.text_field :title %>
+<p>Opinion</p>
+<%= f.text_area :body %><br>
+<%= f.submit "Create Book" %>
+<% end %>

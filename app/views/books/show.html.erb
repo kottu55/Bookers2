@@ -1,3 +1,6 @@
+<%= render 'books/user_info_new_book', book: @newbook, user: @user %>
+
+
 <h2>Book detail</h2>
 <table>
 	<thead>
@@ -5,8 +8,8 @@
 			<td>image</td>
 			<td><%= @book.title %></td>
 			<td><%= @book.body %></td>
-			<td><%= link_to 'Edit', "" %></td>
-			<td><%= link_to 'Destroy', ""%></td>
+			<td><%= link_to 'Edit', edit_book_path %></td>
+			<td><%= link_to 'Destroy', book_path, method: :delete %></td>
 		</tr>
 	</thead>
 	<tbody>
