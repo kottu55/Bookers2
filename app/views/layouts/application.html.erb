@@ -36,11 +36,19 @@
             </li>
           <% else %>
             <li class="" style="padding:10px">
+              <i class="fa fa-home"></i>
+              <span><%= link_to 'Home', home_about_path %></span>
+            </li>
+            <li class="" style="padding:10px">
+              <i class="fa fa-chain"></i>
+              <span><%= link_to "About", root_path %></span>
+            </li>
+            <li class="" style="padding:10px">
               <i class="fa fa-user-plus"></i>
               <span><%= link_to "sign up", new_user_registration_path %></span>
             </li>
             <li class="" style="padding:10px">
-              <i class="fa fa-sign-in-alt"></i>
+              <i class="fa fa-sign-in"></i>
               <span><%= link_to "login", new_user_session_path %></span>
             </li>
           <% end %>
