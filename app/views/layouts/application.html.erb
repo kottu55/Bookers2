@@ -5,13 +5,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'  %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div id="slidemenu">
-  <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+    <div class="alert-info">
+    <div class="header container">
+      <h2 class="">Bookers</h2>
+  <ul class="nav navbar-nav navbar-right">
     <% if user_signed_in? %>
       <li class="">
         <%= link_to 'Home', user_path(current_user.id) %>
@@ -34,6 +37,7 @@
       </li>
     <% end %>
   </ul>
+</div>
 </div>
     <%= yield %>
   </body>

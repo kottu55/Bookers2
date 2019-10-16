@@ -1,7 +1,15 @@
-<h1>welcome to Bookers !!</h1>
-<p>In <b>Bookers,</b></p>
-
-<p>you can share and exchange your opinions , inpressions , and emotions<br>about varioius books!</p>
-
-<%= link_to 'Log in', "/users/sign_in"%><br>
-<%= link_to 'Sign Up', "/users/sign_up"%>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h1>welcome to <i class="fa fa-book"></i>Bookers !!</h1>
+			<p>In <b><i class="fa fa-book"></i>Bookers,</b></p>
+			<p>you can share and exchange your opinions , inpressions , and emotions<br>about varioius books!</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<p class="btn btn-info " style="width: 400px; margin-bottom: 10px"><%= link_to 'Log in', "/users/sign_in"%></p>
+			<p class="btn btn-success" style="width: 400px"><%= link_to 'Sign Up', "/users/sign_up"%></p>
+		</div>
+	</div>
+</div>

@@ -1,6 +1,9 @@
+<div class="col-xs-3">
+	
+
 <h2>User info</h2>
 <p>image</p>
-<table>
+<table class="table">
 	<tbody>
 		<tr>
 			<td>name</td>
@@ -12,7 +15,7 @@
 		</tr>
 	</tbody>
 </table>
-<%= link_to 'User Edit', edit_user_path(current_user.id) %>
+<p class="border text-center"><%= link_to 'User Edit', edit_user_path(current_user.id) %></p>
 
 <h2>New book</h2>
 <%= form_for(book) do |f| %>
@@ -22,3 +25,5 @@
 <%= f.text_area :body %><br>
 <%= f.submit "Create Book" %>
 <% end %>
+
+</div>
