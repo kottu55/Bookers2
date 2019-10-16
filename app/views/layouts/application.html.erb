@@ -11,34 +11,47 @@
   </head>
 
   <body>
-    <div class="alert-info">
-    <div class="header container">
-      <h2 class="">Bookers</h2>
-  <ul class="nav navbar-nav navbar-right">
-    <% if user_signed_in? %>
-      <li class="">
-        <%= link_to 'Home', user_path(current_user.id) %>
-      </li>
-      <li class="">
-        <%= link_to 'User', users_path %>
-      </li>
-      <li class="">
-        <%= link_to 'Books', books_path %>
-      </li>
-      <li class="">
-        <%= link_to "logout", destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li class="">
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li class="">
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+    <div class="header">
+    <div class="container">
+      <div class="col-xs-3">
+        <h2 class="site-title">Bookers</h2>
+      </div>
+        <ul class="nav navbar-nav navbar-right" style="width:400px">
+          <% if user_signed_in? %>
+            <li class="" style="padding:10px">
+              <i class="fa fa-home"></i>
+              <span><%= link_to 'Home', user_path(current_user.id) %></span>
+            </li>
+            <li class="" style="padding:10px">
+              <i class="fa fa-user"></i>
+              <span><%= link_to 'User', users_path %></span>
+            </li>
+            <li class="" style="padding:10px">
+              <i class="fa fa-book"></i>
+              <span><%= link_to 'Books', books_path %></span>
+            </li>
+            <li class="" style="padding:10px">
+              <i class="fa fa-sign-out"></i>
+              <span><%= link_to "logout", destroy_user_session_path, method: :delete %></span>
+            </li>
+          <% else %>
+            <li class="" style="padding:10px">
+              <i class="fa fa-user-plus"></i>
+              <span><%= link_to "sign up", new_user_registration_path %></span>
+            </li>
+            <li class="" style="padding:10px">
+              <i class="fa fa-sign-in-alt"></i>
+              <span><%= link_to "login", new_user_session_path %></span>
+            </li>
+          <% end %>
+        </ul>
+    </div>
 </div>
     <%= yield %>
+    <div class="footer container">
+      <div class="row pull-right">
+        <span>CopyRight Infratop.inc</span>
+      </div>
+    </div>
   </body>
 </html>

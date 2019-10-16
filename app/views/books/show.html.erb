@@ -1,20 +1,23 @@
-<%= render 'books/user_info_new_book', book: @newbook, user: @user %>
+<div class="container">
+	<% if flash[:notice] %>
+ 	 <p><%= flash[:notice] %></p>
+	<% end %>
 
+	<%= render 'books/user_info_new_book', book: @newbook, user: @user %>
 
-<h2>Book detail</h2>
-<table>
-	<thead>
-		<tr>
-			<td>image</td>
-			<td><%= @book.title %></td>
-			<td><%= @book.body %></td>
-			<td><%= link_to 'Edit', edit_book_path %></td>
-			<td><%= link_to 'Destroy', book_path, method: :delete %></td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>data</td>
-		</tr>
-	</tbody>
-</table>
+	<div class="col-xs-9">
+		<h2>Book detail</h2>
+		<table class="table">
+			<tbody>
+				<tr>
+					<td><%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg'%></td>
+					<td><%= @book.title %></td>
+					<td><%= @book.body %></td>
+					<td><%= link_to edit_book_path do %><p class="btn btn-xs btn-success">Edit</p><% end %></td>
+					<td><%= link_to book_path, method: :delete do %><p class="btn btn-xs btn-danger">Destroy</p><% end %></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>
