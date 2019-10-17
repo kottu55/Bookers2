@@ -3,18 +3,25 @@
  	 <p><%= flash[:notice] %></p>
 	<% end %>
 
-	<%= render 'books/user_info_new_book', book: @newbook, user: @user %>
+	<%= render 'books/user_info_new_book', book: @newbook, user: @bookuser %>
 
 	<div class="col-xs-9">
 		<h2>Book detail</h2>
 		<table class="table">
 			<tbody>
 				<tr>
-					<td><%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg'%></td>
-					<td><%= @book.title %></td>
+					<td>
+						<%= link_to user_path(@bookuser.id) do %>
+						<%= attachment_image_tag @bookuser, :profile_image, :fill, 50, 50, format: 'jpeg'%><br>
+						<%= @bookuser.name %>
+						<% end %>
+					</td>
+					<td><%= link_to @book.title, book_path(@book.id) %></td>
 					<td><%= @book.body %></td>
+					<% if @book.user_id.to_i == current_user.id %>
 					<td><%= link_to edit_book_path do %><p class="btn btn-xs btn-success">Edit</p><% end %></td>
 					<td><%= link_to book_path, method: :delete do %><p class="btn btn-xs btn-danger">Destroy</p><% end %></td>
+					<% end %>
 				</tr>
 			</tbody>
 		</table>
